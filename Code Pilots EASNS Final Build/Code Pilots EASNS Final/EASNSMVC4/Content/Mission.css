@@ -1,0 +1,21 @@
+/*===================== MISSION PAGE ==========*/
+
+
+
+.imgMission{
+	float: right; 
+	margin-left: 50px; 
+	border: 1px solid #dcdcdc;
+}
+
+.imgNCollege{
+	float: left; 
+	margin-right: 50px; 
+	border: 1px solid #dcdcdc;
+}
+
+.stafflink{
+	float: right; 
+	padding: 30px 0; 
+	clear: both;
+}

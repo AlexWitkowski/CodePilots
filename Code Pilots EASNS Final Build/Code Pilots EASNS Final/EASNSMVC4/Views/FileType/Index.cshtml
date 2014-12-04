@@ -1,0 +1,37 @@
+﻿@model IEnumerable<EASNSMVC4.Models.FileType>
+
+@{
+    ViewBag.Title = "File Types";
+}
+@if (User.IsInRole("Admin"))
+{
+
+    <h1 id="disTitle" class="headerText">File Types</h1>
+    <p>@Html.ActionLink("Back to Control Pannel", "Index", "Admin")</p>
+    <p>
+        @Html.ActionLink("Add new File Type", "Create")
+    </p>
+    <table>
+        <tr style="border-bottom: solid 1px black;">
+            <th>
+                @Html.DisplayNameFor(model => model.Desc)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr style="border-bottom: solid 1px black; height: 50px;">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Desc)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+                    @Html.ActionLink("Details", "Details", new { id = item.ID })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                </td>
+            </tr>
+        }
+
+    </table>
+}

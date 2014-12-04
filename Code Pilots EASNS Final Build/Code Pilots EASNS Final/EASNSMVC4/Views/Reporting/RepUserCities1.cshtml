@@ -1,0 +1,31 @@
+﻿@using EASNSMVC4.Models
+@model IEnumerable<EASNSMVC4.Models.UserProfile>
+@{
+    ViewBag.Title = "RepResource";
+}
+@if (User.IsInRole("Admin"))
+{
+    <h2 style="text-align: center;"><span style="color: #0094ff"><b>Top</b></span> User Active City</h2>
+
+    <table style="margin: 0 auto;">
+        <tr style="border-bottom: solid 1px black;">
+            <td><b>City</b></td>
+            <td><b>Number of Users</b></td>
+        </tr>
+
+        <tr>
+            <td>
+                @ViewBag.UseCity1
+            </td>
+            <td>
+                @ViewBag.City1Count
+            </td>
+        </tr>
+    </table>
+
+    <br /><br />
+    @Html.ActionLink("Top 3 Cities", "RepUserCities") @:| @Html.ActionLink("Top 5 Cities", "RepUserCities5")
+    <br /><br />
+    
+    @Html.ActionLink("Return to Reporting", "Index", "Reporting")
+}

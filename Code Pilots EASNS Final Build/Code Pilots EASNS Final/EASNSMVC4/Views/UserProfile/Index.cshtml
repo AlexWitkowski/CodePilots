@@ -1,0 +1,77 @@
+﻿@using EASNSMVC4.Models
+@model IEnumerable<EASNSMVC4.Models.UserProfile>
+
+@if (User.IsInRole("Admin"))
+{
+    List<UserProfile> leftOverUsers = new List<UserProfile>();
+    
+    ViewBag.Title = "View Users";
+
+    <h2>View Users</h2>
+    
+    using (Html.BeginForm())
+    {
+        <p>
+            To find a specific user, please insert a <b>Screen Name</b> or a <b>Last Name</b>:<br />@Html.TextBox("SearchString")  
+            <input type="submit" value="Search" /></p>
+    }
+
+    <table>
+        <tr style="border-bottom: solid 1px black;">
+            <td><b>@Html.ActionLink("Screen Name", "Index", new { sortOrder = ViewBag.UserNameSortParm })</b></td>
+            <td><b>First Name</b></td>
+            <td><b>@Html.ActionLink("Last Name", "Index", new { sortOrder = ViewBag.LastNameSortParm })</b></td>
+            <td><b>@Html.ActionLink("Requested Role", "Index", new { sortOrder = ViewBag.RequestedRoleSortParm })</b></td>
+            <td><b>Current Role</b></td>
+            <td><b>@Html.ActionLink("Residing City", "Index", new { sortOrder = ViewBag.CitySortParm })</b></td>
+            <td></td>
+        </tr>
+    
+    @foreach (var item in Model)
+    {   
+        string[] rolesArray = Roles.Provider.GetRolesForUser(item.UserName);
+   
+        if (rolesArray.Length > 0 && rolesArray[0].ToString() == "Awaiting Approval")
+        {        
+            <tr style="border-bottom: solid 1px black; height: 75px;">
+                <td>@item.UserName</td>
+                <td>@item.UserFirst</td>
+                <td>@item.UserLast</td>
+                <td>@item.UserReqRole</td>
+                <td style="color: red;">@rolesArray[0].ToString()</td>
+                <td>@item.UserCity</td>
+                <td>@Html.ActionLink("Details", "Details", new { id = item.UserId })<br />@Html.ActionLink("Edit", "Edit", new { id = item.UserId })<br />@Html.ActionLink("Delete", "Delete", new { id = item.UserId })</td>
+            </tr>
+        }
+
+        else
+        {
+            leftOverUsers.Add(item);
+        }
+    }
+    
+    @foreach (var i in leftOverUsers)
+    {   
+        string[] rolesArray = Roles.Provider.GetRolesForUser(i.UserName);
+    
+        <tr style="border-bottom: solid 1px black; height: 75px;">       
+            <td>@i.UserName</td>
+            <td>@i.UserFirst</td>
+            <td>@i.UserLast</td>
+            <td>@i.UserReqRole</td>
+            <td>@if(rolesArray.Length < 1)
+                {
+                    @:Not Assigned
+                }
+                else
+                { 
+                    @rolesArray[0].ToString()
+                }
+            </td>
+            <td>@i.UserCity</td>
+            <td>@Html.ActionLink("Details", "Details", new { id = i.UserId })<br />@Html.ActionLink("Edit", "Edit", new { id = i.UserId })<br />@Html.ActionLink("Delete", "Delete", new { id = i.UserId })</td>
+        </tr>
+    }
+    
+</table>
+}

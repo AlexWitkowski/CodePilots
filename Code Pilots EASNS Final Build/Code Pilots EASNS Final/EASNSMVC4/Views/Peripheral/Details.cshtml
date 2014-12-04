@@ -1,0 +1,48 @@
+﻿@model EASNSMVC4.Models.Peripheral
+@using EASNSMVC4.Models
+@{
+    ViewBag.Title = "Hardware Details";
+}
+<link href="~/Content/Details.css" rel="stylesheet" />
+<h2>Details for <span>@Html.DisplayTextFor(model => model.Desc)</span></h2>
+<br />
+@using (Html.BeginForm())
+{ 
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    
+    <fieldset>
+     
+        <div class="user-left">
+             <span>@Html.DisplayNameFor(model => model.Desc)</span>
+            <br />
+            @Html.DisplayFor(model => model.Desc)
+        </div>
+
+        <div class="user-right">
+             <span>@Html.DisplayNameFor(model => model.TechLevel.Desc)</span>
+            <br />
+            @Html.DisplayFor(model => model.TechLevel.Desc)
+        </div>
+
+        @*<div class="display-label">
+             @Html.DisplayNameFor(model => model.Display)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Display)
+        </div>*@
+
+        <div class="user-left">
+             <span>@Html.DisplayNameFor(model => model.Quantity)</span>
+            <br />
+            @Html.DisplayFor(model => model.Quantity)
+        </div>
+    </fieldset>
+    <p>
+        @if(User.IsInRole("Admin"))
+        {
+            @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) 
+        }
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

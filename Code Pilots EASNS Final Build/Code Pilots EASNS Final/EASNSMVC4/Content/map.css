@@ -1,0 +1,112 @@
+#main img{
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+#techTable{
+	border: none;
+	box-shadow: none;
+}
+
+#techTable td{
+	background-color: #fff;
+	vertical-align: top;
+}
+
+.t1{
+	width: 250px;
+	height: inherit;
+	font-weight: bold;
+	line-height: 30px;
+	border-top: 1px solid #dcdcdc;
+}
+
+.t2{
+	height: inherit;
+	line-height: 30px;
+	border-top: 1px solid #dcdcdc;
+}
+
+
+.headerText1{		
+	color: #1892db; 
+	margin-top: 50px; 
+	font-size: 2em;
+}
+
+.headerText2{
+	color: #1892db; 
+	font-size: 2em; 
+}
+
+#main img{
+	margin-top: -10px; 
+	margin-bottom: 10px;
+
+}
+/*Section Buttons*/
+#MapContent{
+    width: 1000px;
+}
+
+#contentDirect{
+	width: inherit;
+	height: 178px;
+	margin-top: 25px;
+}
+
+.contentButtons{
+	width: 128px;
+	height: 128px;
+	padding: 25px;
+	float: left;
+	margin-right: 27px;
+}
+
+
+#peripheralButton{ background-color: #1892db; margin-left: 90px; }
+
+#peripheralButton:hover{ 
+	background-color: #4fb2ed;
+	cursor: pointer;
+	padding: 25px 19px 19px 25px;
+	border: 3px solid #1892db;
+}
+
+#vendorButton{ background-color: #0de175; margin-left: 90px; }
+
+#vendorButton:hover{ 
+	background-color: #46f09a;
+	cursor: pointer;
+	padding: 25px 19px 19px 25px;
+	border: 3px solid #0de175;
+}
+
+#regVendorButton{ background-color: #ff930f; margin-left: 90px; }
+
+#regVendorButton:hover{
+	background-color: #ffae4b;
+	cursor: pointer;
+	padding: 25px 19px 19px 25px;
+	border: 3px solid #ff930f;
+}
+
+#buttonTitles{
+	width: inherit;
+	height: 72px;
+	float: left;
+}
+
+.buttonTitles{
+	float: left;
+	width: 178px;
+	margin-top: 15px;
+	margin-right: 25px;
+	text-align: center;
+}
+
+#peripheral{ margin-left: 90px;}
+
+#vendor{margin-left: 90px;}
+
+#regVendor{margin-left: 90px;}

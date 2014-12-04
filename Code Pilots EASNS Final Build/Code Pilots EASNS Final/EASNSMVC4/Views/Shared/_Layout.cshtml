@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Educational Assistant Special Needs Support</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/Style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div class="content-wrapper">
+            <!--=======================NAV BAR=======================-->
+            <div id="nav">
+                <div id="navContainer">
+                    <ul class="navul">
+                        <li id="Navigation">
+                            <b>@Html.ActionLink("Home", "Index", "Home")</b>
+                    </li>
+                    <li>
+                        <b>About</b><img src="~/Images/triangles.png" width="10" height="5" class="triangles" alt="triangle">
+                        <ul>
+                            <li id="Navigation">@Html.ActionLink("Mission", "Mission", "About")</li>
+                            <li id="Navigation">@Html.ActionLink("Staff", "Staff", "About")</li>
+                            <li id="Navigation">@Html.ActionLink("ADHD", "ADHD", "Information")</li>
+                            <li id="Navigation">@Html.ActionLink("Learning Disabilities", "LearningDisabilities", "Information")</li>
+                            <li id="Navigation">@Html.ActionLink("Developmental Disabilities", "DevelopmentalDisabilities", "Information")</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <b>Technology Centre</b><img src="~/Images/triangles.png" width="10" height="5" class="triangles" alt="triangle"/>
+                        <ul>
+                            <li id="Navigation">@Html.ActionLink("Technology Centre", "ViewTech", "Tech")</li>
+                            <li id="Navigation">@Html.ActionLink("Hardware", "Index", "Peripheral")</li>
+                            <li id="Navigation">@Html.ActionLink("View Vendors", "PubIndex", "Vendor")</li>
+                            <li id="Navigation">@Html.ActionLink("Register Vendors", "RegisterVendors", "Vendor")</li>       
+                        </ul>
+
+                    </li>
+                    
+                    <li>
+                        <b>Resources</b><img src="~/Images/triangles.png" width="10" height="5" class="triangles" alt="triangle" />
+                        <ul>
+                           
+                            <li id="Navigation">@Html.ActionLink("View Resources", "Index", "Resource")</li>
+                            @if(User.Identity.IsAuthenticated)
+                            { 
+                                <li id="Navigation">@Html.ActionLink("Upload a Resource", "Create", "Resource")</li>
+                            }
+                        </ul>
+                    </li>
+
+                    <li id="Navigation">
+                        <b>@Html.ActionLink("Contact", "Contact", "Contact")</b>
+                    </li>
+                    
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li>
+                        <b>Admin Control</b><img src="~/Images/triangles.png" width="10" height="5" class="triangles" alt="triangle" />
+                            <ul>
+                                <li id="Navigation">@Html.ActionLink("Main ", "Index", "Admin")</li>
+                                <li id="Navigation">@Html.ActionLink("View Users", "Index", "UserProfile")</li>
+                                <li id="Navigation">@Html.ActionLink("Vendors", "Index", "Vendor")</li>
+                                <li id="Navigation">@Html.ActionLink("Technology Level", "Index", "TechLevel")</li>
+                                <li id="Navigation">@Html.ActionLink("Stakeholders", "Index", "Stakeholder")</li>
+                                <li id="Navigation">@Html.ActionLink("File Types", "Index", "FileType")</li>
+                                <li id="Navigation">@Html.ActionLink("Disabilities", "Index", "Disability")</li>
+                                <li id="Navigation">@Html.ActionLink("Active States", "Index", "ActiveState")</li>
+                                <li id="Navigation">@Html.ActionLink("Inventory", "Index", "Inventory")</li>
+                                <li id="Navigation">@Html.ActionLink("Inventory Resource", "Index", "InventoryResource")</li>
+                                <li id="Navigation">@Html.ActionLink("Inventory Type", "Index", "InventoryType")</li>
+                                <li id="Navigation">@Html.ActionLink("Reporting", "Index", "Reporting")</li>
+                            </ul>
+                        </li>
+                    }
+                    <span style="float: right;">@Html.Partial("_LoginPartial")</span>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<!--======================================= HEADER ========================================================-->
+<div id="wrapper">
+    <div id="header">
+        <div id="lcol">
+            <a href="http://www.niagaracollege.ca/content/" class="Logo">
+                <img src="~/Images/NCTEMP1.png" width="350" height="117" alt="Niagara College Canada">
+                </a>
+        </div>
+        @*<div id="rcol">
+            <br>
+            <br />
+            <br />
+            <input type="text" id="txtsearch" class="txtbox" placeholder="Type Your Search Here">
+            <input type="button" value="Search" id="btnSearch">
+        </div>*@
+    </div>
+
+</div>
+<div id="body">
+    @RenderSection("featured", required: false)
+    <section class="content-wrapper main-content clear-fix">
+        @RenderBody()
+    </section>
+</div>
+<!--==================== FOOTER ========================-->
+<div id="footer">
+    <div id="footerWrapper">
+        <div class="footerContact">
+            <h2 class="footerHeading">Address</h2>
+            <p class="footerWriting">300 Woodlawn Crescent<br>Welland, Ontario<br>L3C 7L3</p>
+        </div>
+        <div class="footerContact">
+            <h2 class="footerHeading">Contact</h2>
+            <p class="footerWriting"><span class="contactTitle">Telephone: </span> (905) 735 - 2211<br><span class="contactTitle">E-mail: </span> ncspecialassist@niagaracollege.ca<br><span class="contactTitle">Fax: </span> (905) 735 2212</p>
+        </div>
+        <div id="footerSiteMap">
+            <div class="quickSection">
+                <h3 class="quickTitle">About</h3>
+                <p class="quickLinks">@Html.ActionLink("Mission", "Mission", "About")<br>@Html.ActionLink("Staff", "Staff", "About")<br />@Html.ActionLink("ADHD", "ADHD", "Information")<br>@Html.ActionLink("Learning Disabilities", "LearningDisabilities", "Information")<br>@Html.ActionLink("Developmental Disabilities", "DevelopmentalDisabilities", "Information")</p>
+            </div>
+            
+            <div class="quickSection">
+                <h3 class="quickTitle">Technology Centre</h3>
+                <p class="quickLinks">@Html.ActionLink("Technology Centre", "ViewTech", "Tech")<br />@Html.ActionLink("Hardware", "Index", "Peripheral")<br />@Html.ActionLink("View Vendors", "PubIndex", "Vendor")<br>@Html.ActionLink("Register Vendors", "RegisterVendors", "Vendor")</p>
+            </div>
+            <div class="quickSection">
+                <h3 class="quickTitle">Resources</h3>
+                <p class="quickLinks">@Html.ActionLink("View Resources", "Index", "Resource")<br />@if (User.Identity.IsAuthenticated) { @Html.ActionLink("Upload a Resource", "Create", "Resource")}</p>
+                                                                                                       
+            </div>
+            <div class="quickSection">
+                <h3 class="quickTitle">@Html.ActionLink("Contact", "Contact", "Contact")</h3>
+            </div>
+            @if (User.IsInRole("Admin"))
+            {
+              <div class="quickSection">
+                  <h3 class="quickTitle">Admin Control</h3>
+                  <p class="quickLinks">@Html.ActionLink("Main Pannel", "Index", "Admin")<br>@Html.ActionLink("View Users", "Index", "UserProfile")<br />@Html.ActionLink("Vendors", "Index", "Vendor")<br />@Html.ActionLink("Technology Level", "Index", "TechLevel")<br />@Html.ActionLink("Stakeholders", "Index", "Stakeholder")<br />@Html.ActionLink("File Types", "Index", "FileType")<br />@Html.ActionLink("Disabilities", "Index", "Disability")<br />@Html.ActionLink("Active States", "Index", "ActiveState")<br />@Html.ActionLink("Inventory", "Index", "Inventory")<br />@Html.ActionLink("Inventory Resource", "Index", "InventoryResource")<br />@Html.ActionLink("Inventory Type", "Index", "InventoryType")<br />@Html.ActionLink("Reporting", "Index", "Reporting")</p>
+              </div>
+            }
+        </div>
+    </div>
+    <p style="text-align: center; padding-top: 30px;">
+        Code Pilots &copy; 2014
+    </p>
+</div>
+@Scripts.Render("~/bundles/jquery")
+@RenderSection("scripts", required: false)
+</body>
+</html>

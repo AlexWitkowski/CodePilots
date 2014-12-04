@@ -1,0 +1,99 @@
+﻿@model EASNSMVC4.Models.Resource
+@using EASNSMVC4.Models
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<link href="~/Content/Style.css" rel="stylesheet" />
+<link href="~/Content/UserProfile.css" rel="stylesheet" />
+
+<h2>Details for <span style="color: #1892db;">@Html.DisplayTextFor(model => model.Title)</span></h2>
+<br />
+
+@using (Html.BeginForm())
+{
+     @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+
+            <div class="user-left">
+                <span style="color: #1892db; font-weight: bold;">@Html.LabelFor(model => model.Title)</span>
+                <br />
+                @Html.DisplayTextFor(model => model.Title)
+            </div>
+            <div class="user-right">
+                <span style="color: #1892db; font-weight: bold;">@Html.LabelFor(model => model.FilePath)</span>
+                <br />
+                @Html.DisplayTextFor(model => model.FilePath)
+            </div>
+            <div class="user-left">
+                <br />
+                <span style="color: #1892db; font-weight: bold;">@Html.LabelFor(model => model.FileType.Desc)</span>
+                <br />
+                @Html.DisplayTextFor(model => model.FileType.Desc)
+            </div>
+            <div class="user-right">
+                <br />
+                <span style="color: #1892db; font-weight: bold;">Download</span>
+                <br />
+                @Html.ActionLink("Click Here", "Download", new { path = Model.FilePath})
+            </div>
+            <div class="user-right">
+                <br />
+                <span style="color: #1892db; font-weight: bold;">@Html.LabelFor(model => model.Desc)</span>
+                <br />
+                @Html.DisplayTextFor(model => model.Desc)
+            </div>
+            <div class="user-left">
+                <br />
+                <span style="color: #1892db; font-weight: bold;">@Html.LabelFor(model => model.NumDownloads)</span>
+                <br />
+                @Html.DisplayTextFor(model => model.NumDownloads)
+            </div>
+            <div class="user-right">
+                <br />
+                <span style="color: #1892db; font-weight: bold;">@Html.LabelFor(model => model.Tags)</span>
+                <br />
+                @Html.DisplayTextFor(model => model.Tags)
+            </div>
+            <div class="user-left">
+                <br />
+                <span style="color: #1892db; font-weight: bold;">@Html.LabelFor(model => model.CreatedOn)</span>
+                <br />
+                @Html.DisplayTextFor(model => model.CreatedOn)
+            </div>
+            @if(User.IsInRole("Admin"))
+            { 
+                <div class="user-right">
+                    <br />
+                    <span style="color: #1892db; font-weight: bold;">@Html.LabelFor(model => model.ActiveState.Desc)</span>
+                    <br />
+                    @Html.DisplayTextFor(model => model.ActiveState.Desc)
+                </div>
+                <div class="user-left">
+                    <br />
+                    <span style="color: #1892db; font-weight: bold;">@Html.LabelFor(model => model.CreatedBy)</span>
+                    <br />
+                    @Html.DisplayTextFor(model => model.CreatedBy)
+                </div>
+                <div class="user-right">
+                    <br />
+                    <span style="color: #1892db; font-weight: bold;">@Html.LabelFor(model => model.UpdatedOn)</span>
+                    <br />
+                    @Html.DisplayTextFor(model => model.UpdatedOn)
+                </div>
+                <div class="user-left">
+                    <br />
+                    <span style="color: #1892db; font-weight: bold;">@Html.LabelFor(model => model.UpdatedBy)</span>
+                    <br />
+                    @Html.DisplayTextFor(model => model.UpdatedBy)
+                </div>
+        }      
+        </fieldset>
+}
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

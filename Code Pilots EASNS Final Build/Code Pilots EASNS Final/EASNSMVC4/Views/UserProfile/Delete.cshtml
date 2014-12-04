@@ -1,0 +1,40 @@
+﻿@using EASNSMVC4.Models
+@model EASNSMVC4.Models.UserProfile
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <h3>Are you sure you want to delete user:</h3>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UserName)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserFirst)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayTextFor(model => model.UserFirst)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserLast)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayTextFor(model => model.UserLast)
+        </div>
+    
+    <p>
+        <input type="submit" value="Confirm" />
+    </p>
+    </fieldset>
+}

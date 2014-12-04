@@ -1,0 +1,61 @@
+﻿@model EASNSMVC4.Models.InventoryType
+@using EASNSMVC4.Models
+@{
+    ViewBag.Title = "Inventory Type Details";
+}
+<link href="~/Content/Details.css" rel="stylesheet" />
+
+@if (User.IsInRole("Admin"))
+{
+    <h2>Details for <span>@Html.DisplayTextFor(model => model.Name)</span></h2>
+    using (Html.BeginForm())
+    {
+        <fieldset>
+
+            <div class="user-left">
+                <span>@Html.DisplayNameFor(model => model.Name)</span>
+                <br />
+                @Html.DisplayFor(model => model.Name)
+            </div>
+            <div class="user-right">
+                <span>@Html.DisplayNameFor(model => model.ModelNumber)</span>
+                <br />
+                @Html.DisplayFor(model => model.ModelNumber)
+            </div>
+
+            <div class="user-left">
+                <span>@Html.DisplayNameFor(model => model.Desc)</span>
+                <br />
+                @Html.DisplayFor(model => model.Desc)
+            </div>
+
+            <div class="user-right">
+                <span>@Html.DisplayNameFor(model => model.Quantity)</span>
+                <br />
+                @Html.DisplayFor(model => model.Quantity)
+            </div>
+
+            <div class="user-left">
+                <span>@Html.DisplayNameFor(model => model.Vendor.Name)</span>
+                <br />
+                @Html.DisplayFor(model => model.Vendor.Name)
+            </div>
+
+            <div class="user-right">
+                <span>@Html.DisplayNameFor(model => model.Peripheral.Desc)</span>
+                <br />
+                @Html.DisplayFor(model => model.Peripheral.Desc)
+            </div>
+
+            <div class="user-left">
+                <span>@Html.DisplayNameFor(model => model.Display)</span>
+                <br />
+                @Html.DisplayFor(model => model.Display)
+            </div>
+        </fieldset>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) 
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    }
+}

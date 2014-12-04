@@ -1,0 +1,48 @@
+﻿@model IEnumerable<EASNSMVC4.Models.InventoryType>
+
+@{
+    ViewBag.Title = "Inventory Type";
+}
+@if(User.IsInRole("Admin"))
+{
+    <h1 id="disTitle" class="headerText">Inventory Type</h1>
+    <p>@Html.ActionLink("Back to Control Pannel", "Index", "Admin")</p>
+
+    <p>
+        @Html.ActionLink("Create new inventory type", "Create")
+    </p>
+    <table>
+        <tr style="border-bottom: solid 1px black;">
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Desc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vendor.Name)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr style="border-bottom: solid 1px black;">
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vendor.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.ID }) 
+                @Html.ActionLink("Details", "Details", new { id=item.ID }) 
+                @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            </td>
+        </tr>
+    }
+
+    </table>
+}

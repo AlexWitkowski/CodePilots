@@ -1,0 +1,61 @@
+﻿@model EASNSMVC4.Models.Resource
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Resource</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FilePath)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FilePath)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Tags)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tags)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FileType.Desc)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FileType.Desc)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ActiveState.Desc)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ActiveState.Desc)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Desc)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Desc)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

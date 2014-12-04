@@ -1,0 +1,154 @@
+
+
+/*Index Page*/
+
+
+
+#news{
+	background: rgb(238,238,238); /* Old browsers */
+	background: -moz-linear-gradient(45deg, rgba(238,238,238,1) 0%, rgba(238,238,238,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(238,238,238,1)), color-stop(100%,rgba(238,238,238,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(45deg, rgba(238,238,238,1) 0%,rgba(238,238,238,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(45deg, rgba(238,238,238,1) 0%,rgba(238,238,238,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(45deg, rgba(238,238,238,1) 0%,rgba(238,238,238,1) 100%); /* IE10+ */
+	background: linear-gradient(45deg, rgba(238,238,238,1) 0%,rgba(238,238,238,1) 100%); /* W3C */
+	width:954px;
+	height:300px;
+	margin: 10px 0px 0px 0px;
+	border: 1px solid #dcdcdc;
+}
+
+.homeImage{
+	position: absolute; 
+}
+
+.overImage{	
+	position: absolute;
+	font-weight: normal;
+	z-index: 1;
+	margin-left: 25px;
+	margin-top: 30px;
+	padding: 15px;
+	color: #fff;
+	background-color: rgba(0, 0, 0, .5);
+}
+
+
+#contentDirect{
+	width: 615px;
+	height: 178px;
+	float: left;
+	margin-top: 25px;
+}
+
+.twitter-timeline{
+	width: 310px;
+	float: right;
+}
+
+#twitterContainer{
+	width: 310px;
+	height: 255px;
+	float: right;
+	/*margin: 25px 0 25px 0;
+	padding-left: 25px;*/
+    padding-top: 25px;
+	border-left: 1px solid #dcdcdc;
+	}
+.contentButtons{
+	width: 128px;
+	height: 128px;
+	padding: 25px;
+	float: left;
+	margin-right: 27px;
+}
+
+#resourceButton{ background-color: #1892db; }
+
+#resourceButton:hover{ 
+	background-color: #4fb2ed;
+	cursor: pointer;
+	padding: 25px 19px 19px 25px;
+	border: 3px solid #1892db;
+}
+
+#technologyButton{ background-color: #0de175; }
+
+#technologyButton:hover{ 
+	background-color: #46f09a;
+	cursor: pointer;
+	padding: 25px 19px 19px 25px;
+	border: 3px solid #0de175;
+}
+
+#vendorButton{ background-color: #ff930f; }
+
+#vendorButton:hover{
+	background-color: #ffae4b;
+	cursor: pointer;
+	padding: 25px 19px 19px 25px;
+	border: 3px solid #ff930f;
+}
+
+#buttonTitles{
+	width: 615px;
+	height: 72px;
+	float: left;
+}
+
+.buttonTitles{
+	float: left;
+	width: 178px;
+	margin-top: 15px;
+	margin-right: 25px;
+	text-align: center;
+}
+
+#resHeading{ color: #1892db; }
+
+#tecHeading{ color: #0de175; }
+
+#venHeading{ color: #ff930f; }
+
+#locations{
+	float:left;
+	margin-top:20px;
+}
+
+#instructions{
+	width: 1000px;
+}
+
+#gettingStarted{
+	width: 1000px;
+	margin: 0;
+	padding: 50px 0 25px 0;
+	text-align: center;
+	font-size: 4em;
+	clear: both;
+}
+
+.numbers{
+	width: 100px;
+	height: 175px;
+	float: left;
+	font-size: 7em;
+	font-family: 'Boris';
+	color: #1892db;
+	margin: 0;
+	text-align: center;
+	border-top: 1px solid #dcdcdc;
+}
+
+.instPar{
+	width: 800px;
+	height: 55px;
+	padding: 60px 0;
+	float: right;
+	margin: 0;
+	margin-left: 100px;
+	font-size: 1.75em;
+	color: #161616;
+	border-top: 1px solid #dcdcdc;
+}
+

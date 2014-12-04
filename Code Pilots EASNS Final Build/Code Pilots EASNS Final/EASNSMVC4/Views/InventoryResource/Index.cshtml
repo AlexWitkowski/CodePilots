@@ -1,0 +1,48 @@
+﻿@model IEnumerable<EASNSMVC4.Models.InventoryResource>
+
+@{
+    ViewBag.Title = "Inventory Resource";
+}
+@if(User.IsInRole("Admin"))
+{ 
+    <h1 id="disTitle" class="headerText">Inventory Resource</h1>
+    <p>@Html.ActionLink("Back to Control Pannel", "Index", "Admin")</p>
+
+    <p>
+        @Html.ActionLink("Create new inventory resource", "Create")
+    </p>
+    <table>
+        <tr style="border-bottom: solid 1px black;">
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FilePath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FileType.Desc)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr style="border-bottom: solid 1px black;">
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.ActionLink("Download", "Download", new { path = item.FilePath })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FileType.Desc)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.ID }) 
+                @Html.ActionLink("Details", "Details", new { id=item.ID }) 
+                @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            </td>
+        </tr>
+    }
+
+    </table>
+}

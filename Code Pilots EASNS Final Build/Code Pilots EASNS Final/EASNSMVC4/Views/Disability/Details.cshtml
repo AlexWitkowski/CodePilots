@@ -1,0 +1,26 @@
+﻿@model EASNSMVC4.Models.Disability
+@using EASNSMVC4.Models
+@{
+    ViewBag.Title = "Disability Details";
+}
+<link href="~/Content/Details.css" rel="stylesheet" />
+
+@if (User.IsInRole("Admin"))
+{
+    <h2>Details for <span>@Html.DisplayTextFor(model => model.Desc)</span></h2>
+    using (Html.BeginForm())
+    {
+        <fieldset>
+
+            <div class="user-left">
+                <span>@Html.DisplayNameFor(model => model.Desc)</span>
+                <br />
+                @Html.DisplayFor(model => model.Desc)
+            </div>
+        </fieldset>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ID })
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    }
+}

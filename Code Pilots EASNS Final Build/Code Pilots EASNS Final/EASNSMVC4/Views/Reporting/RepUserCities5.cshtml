@@ -1,0 +1,68 @@
+﻿@using EASNSMVC4.Models
+@model IEnumerable<EASNSMVC4.Models.UserProfile>
+@{
+    ViewBag.Title = "RepResource";
+}
+@if (User.IsInRole("Admin"))
+{
+    <h2 style="text-align: center;">Top <span style="color: #0094ff"><b>5</b></span> Most User Active Cities</h2>
+
+    <table style="margin: 0 auto;">
+        <tr style="border-bottom: solid 1px black;">
+            <td><b>City</b></td>
+            <td><b>Number of Users</b></td>
+        </tr>
+
+        <tr>
+            <td>
+                @ViewBag.UseCity1
+            </td>
+            <td>
+                @ViewBag.City1Count
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @ViewBag.UseCity2
+            </td>
+            <td>
+                @ViewBag.City2Count
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @ViewBag.UseCity3
+            </td>
+            <td>
+                @ViewBag.City3Count
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @ViewBag.UseCity4
+            </td>
+            <td>
+                @ViewBag.City4Count
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @ViewBag.UseCity5
+            </td>
+            <td>
+                @ViewBag.City5Count
+            </td>
+        </tr>
+
+    </table>
+    
+    <br /><br />
+    @Html.ActionLink("Top City!", "RepUserCities1") @:| @Html.ActionLink("Top 3 Cities", "RepUserCities")
+    <br /><br />
+
+    @Html.ActionLink("Return to Reporting", "Index", "Reporting")
+}

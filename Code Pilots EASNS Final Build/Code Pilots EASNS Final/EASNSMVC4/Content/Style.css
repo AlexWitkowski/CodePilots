@@ -1,0 +1,368 @@
+/* ============================== BODY & WRAPPER ==================================== */
+
+body{
+	width: 1000px;
+	margin: 0 auto;
+	color: #000000;
+	font-family: Arial, Times;
+	font-size:16px;
+}
+
+#wrapper{
+	width:1000px;
+	margin: 0 auto;
+	min-height:100%;
+	position:relative;
+}
+
+/* =========================== FONTS ==================== */
+
+@font-face{ 
+	font-family: 'Boris';
+	src: url('../fonts/BorisBlackBloxx.ttf');
+}
+
+.contentText{
+	font-size: 1.2em;
+	text-align: justify;
+}
+
+.headerText{
+	color: #1892db; 
+	font-size: 2.5em;
+	Border-bottom: 1px solid #dcdcdc; 
+}
+
+.red{ color: red; }
+
+
+/* ============================== NAVIGATION BAR =====================================*/
+
+#container{
+    background-color: #161616;
+}
+
+#nav{
+	position:fixed;
+	z-index: 5;
+	top:0;
+    left:0;
+	width: 100%;
+	min-width:1000px;
+	background-color:#161616;
+    padding-left:19px;
+}
+
+#navContainer{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.navul {
+	color:#fff;
+	display: inline;
+	margin:0 auto;
+	list-style: none;
+	/*-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);*/
+}
+
+.navul a { text-decoration:none; }
+
+.navul li {
+	display: inline-block;
+	position: relative;
+	text-align:left;
+	padding: 15px;
+	background-color: #161616;
+	cursor: pointer;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	transition: all 0.2s;
+}
+
+.navul li:hover {
+	background-color: #161616;
+	color: #1892db;
+}
+
+.navul li ul {
+	padding: 0px;
+	position: absolute;
+	margin-top: 15px;
+	left: 0px;
+	width: 250px;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	display: none;
+	opacity: 0;
+	visibility: hidden;
+	-moz-transition: opacity 0.2s;
+    
+}
+
+.navul li ul li { 
+	background-color: #161616; 
+	display: block;
+	text-align:left;
+	padding-left: 15px;
+	color: #fff;
+	width: 150px;
+	text-shadow: 0 -1px 0 #000;
+}
+
+.navul li ul li:hover { 
+	background-color:#1892db;
+	color: #fff; 
+}
+
+.navul li:hover ul {
+	display: block;
+	opacity: 1;
+	visibility: visible;
+    margin-bottom: 50px;
+    position: absolute;
+}
+
+#Navigation a{
+    color: #fff;
+}
+
+#Navigation a:hover{
+    color: #1892db;
+    text-decoration: none;
+}
+
+
+/*--- Nav Drop down triangles ---*/
+.triangles{ padding-bottom: 5px; }
+
+/*--- Sign Up Button ---*/
+
+#signUp{
+	width: 70px;
+	background-color: #1892db;
+	text-align: center;
+	/*padding:15px 0 15px 0;*/
+    text-decoration: none; 
+}
+
+#signUp:hover{
+	background-color: rgba(214,214,214,1);
+}
+
+#signUp a{
+    color: #fff;
+    text-decoration: none;
+}
+#signUp a:hover{
+    color: #1892db;
+    text-decoration: none;
+}
+
+#signUp2{
+	width: 70px;
+	background-color: #1892db;
+	text-align: center;
+	/*padding:15px 0 15px 0;*/
+    text-decoration: none; 
+}
+
+#signUp2:hover{
+	background-color: rgba(214,214,214,1);
+}
+
+#signUp2 a{
+    color: #fff;
+    text-decoration: none;
+}
+#signUp2 a:hover{
+    color: #1892db;
+    text-decoration: none;
+}
+
+/* ==================================== HEADER =======================================*/
+
+#header{
+	margin-top:40px;
+	position: relative;
+	width:1000px;
+	height:125px;
+	z-index: 4;
+	background: -moz-linear-gradient(left, rgba(153,153,153,0) 0%, rgba(168,168,168,0) 24%, rgba(214,214,214,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(153,153,153,0)), color-stop(24%,rgba(168,168,168,0)), color-stop(100%,rgba(214,214,214,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left, rgba(153,153,153,0) 0%,rgba(168,168,168,0) 24%,rgba(214,214,214,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, rgba(153,153,153,0) 0%,rgba(168,168,168,0) 24%,rgba(214,214,214,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left, rgba(153,153,153,0) 0%,rgba(168,168,168,0) 24%,rgba(214,214,214,1) 100%); /* IE10+ */
+	background: linear-gradient(to right, rgba(153,153,153,0) 0%,rgba(168,168,168,0) 24%,rgba(214,214,214,1) 100%); /* W3C */
+}
+
+#lcol{
+	float:left;
+	width:149px;
+	height:100px;
+	padding: 10px 0px 0px 10px;
+}
+
+#rcol{
+	float:right;
+	text-align:right;
+	padding: 0px 10px 0px 0px;
+	margin: 15px 0px 7px 0px;
+}
+
+#rcol a{ font-size: small; }
+
+#txtsearch{ width:315px; }
+
+.txtbox{
+	margin: 0px 0px 8px 0px;
+	width: 150px;
+	height: 25px;
+	background-color: #fff;
+	border: 1px solid #f0f0f0;
+	font-family: Arial;
+	font-size: .8em;
+}
+
+.txtbox:focus{ border: 1px solid #1892db; }
+
+/* <a> Link styling */
+a:link{ text-decoration: none; color: #1892db; }
+a:hover{ text-decoration: underline; color: #1892db; }
+a:visited{ text-decoration: none; color: #1892db; }
+
+#btnSubmit{
+	width: 70px;
+	height: 28px;
+	background-color: #1892db;
+	color: #fff;
+	font-weight: bold;
+	border: none;
+}
+
+#btnSubmit:hover{
+	cursor: pointer;
+	background-color: #4fb2ed;
+}
+
+#btnSearch{
+	width: 70px;
+	height: 28px;
+	background-color: #161616;
+	color: #fff;
+	font-weight: bold;
+	border: none;
+}
+
+#btnSearch:hover{
+	cursor: pointer;
+	background-color: #414141;
+}
+
+#header h1{
+	color:black;
+	padding: 10px;
+	font-weight:bold;
+}
+
+/*example used http://cssdeck.com/labs/another-simple-css3-dropdown-menu */
+
+/*================================= MAIN ==============================================*/
+
+#main{
+	padding-bottom:30px;
+	background-color:white;
+}
+
+/*================================ FOOTER ===========================================*/
+
+#footer{
+	font-size: small;
+	color: gray;
+	background-color: #161616;
+	width: 100%;
+	min-width:1000px;
+	height: 800px;
+	clear: both;
+	border-top: 5px solid #1892db;
+	margin: 0 auto;
+}
+
+#footerWrapper{
+	width: 1000px;
+	margin: 0 auto;
+	margin-top: 50px;
+    
+}
+
+.footerHeading{
+	font-size: 2.5em;
+	background-color: #1892db;
+	color: #161616;
+	padding-left: 5px;
+	text-align: left;
+	margin: 0;
+}
+
+.footerContact{
+	width: 400px;
+	height: 200px;
+	float: left;
+	padding: 0 50px 40px 50px;
+}
+
+.footerWriting{
+	color: #dcdcdc;
+	text-align: left;
+	font-size: 1.5em;
+	line-height: 40px;
+}
+
+.contactTitle{
+	font-weight: bold;
+	color: #4fb2ed;
+}
+
+#footerSiteMap{
+	width: 896px;
+	height: 350px;
+	background-color: #dcdcdc;
+	border: 2px solid #323232;
+	border-radius: 10px;
+	padding-top: 5px;
+	margin: 0 auto;
+	clear: both;
+    padding-bottom: 20px;
+}
+
+.quickSection{
+	width: 149px;
+	padding: 0px;
+	float: left;
+    margin-left: 20px;
+}
+
+.quickTitle{
+	color: #1892db;
+	text-align: center;
+	font-size: 1.3em;
+}
+
+.quickLinks{
+	text-align: center;
+	line-height: 25px;
+}
+/*------Details View------------*/
+.display-label{
+    font-weight: bold;
+}
+.display-field{
+    padding-left: 50px;
+}
+
+/*-----Logo------*/
+.Logo{text-decoration: none;}
+.Logo :hover{}

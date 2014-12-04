@@ -1,0 +1,16 @@
+﻿.user-right{
+    width: 450px;
+    float: right;
+    height: 70px;
+}
+
+.user-left{
+    width: 450px;
+    float: left;
+    height: 70px;
+}
+
+span{
+    color: #1892db; 
+    font-weight: bold;
+}

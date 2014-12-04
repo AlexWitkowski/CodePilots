@@ -1,0 +1,68 @@
+﻿@model EASNSMVC4.Models.Staff
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Staff</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.First)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.First)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Middle)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Middle)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Last)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Last)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Position)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Position)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Campus)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Campus)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Avatar)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Avatar)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Desc)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Desc)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

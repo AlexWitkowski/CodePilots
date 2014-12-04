@@ -1,0 +1,59 @@
+﻿@model IEnumerable<EASNSMVC4.Models.Peripheral>
+
+@{
+    ViewBag.Title = "Hardware Index";
+}
+
+<h2>Hardware</h2>
+@if(User.IsInRole("Admin"))
+{ 
+    <p>
+        @Html.ActionLink("Create a new hardware", "Create")
+    </p>
+}
+<table>
+    <tr style="border-bottom: solid 1px black;">
+        <th style="padding-right: 50px;">
+            @Html.DisplayNameFor(model => model.Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TechLevel.Desc)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Display)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr style="border-bottom: solid 1px black; height: 75px;">
+        <td style="padding-right: 50px;">
+            @Html.DisplayFor(modelItem => item.Desc)
+        </td>
+        <td style="text-align:center;">
+            @Html.DisplayFor(modelItem => item.TechLevel.Desc)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Display)
+        </td>*@
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>*@
+        <td>
+            @if (User.IsInRole("Admin"))
+            {
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+            }
+            @Html.ActionLink("Details", "Details", new { id = item.ID })
+            @if (User.IsInRole("Admin"))
+            {
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            }
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,30 @@
+﻿@model IEnumerable<EASNSMVC4.Models.Vendor>
+@{
+    ViewBag.Title = "View Vendors";
+}
+   <link href="~/Content/Vendor.css" rel="stylesheet" />
+ <!--=========================MAIN==============================-->
+    <div id="main">
+        <div id="disTitleSec">
+            <h1 id="disTitle" class="headerText">Vendors</h1>
+        </div>
+        <div id="englishMap" class="maps">
+            <iframe src="https://mapsengine.google.com/map/embed?mid=zm3xzuGtxgbk.kkcg2mDyR1Hw" width="954" height="500"></iframe><br /><small><a href="https://mapsengine.google.com/map/edit?hl=en&authuser=0&mid=zm3xzuGtxgbk.kkcg2mDyR1Hw">View Larger Map</a></small>
+        </div>
+        <h2 id="englishTitle">All Exhibitors</h2>
+        <div class="vendorColumns"><p>
+            @foreach (var item in Model)
+            {
+                if (item.Website != null)
+                {
+                    var site = "http://" + item.Website;
+                    @: <a href="@site">@Html.DisplayFor(modelItem => item.Name)</a><br />
+                }
+                if (item.Website == null)
+                {
+                    var name = item.Name;
+                    @: <p class="plist">@name</p>
+                }
+            }
+        </p></div>
+    </div>

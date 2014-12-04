@@ -1,0 +1,98 @@
+/*maps*/
+
+.maps{
+	margin-top: 50px;
+	clear: both;
+}
+
+
+/*=========================== MAREK ADDED ======================*/
+
+.mapTitle{
+	font-size: 1.7em;
+	color: #fff;
+	text-align: center;
+	margin: 0;
+	padding-top: 32px;
+}
+
+#mapEnglishSelect{
+	width: 300px;
+	height: 100px;
+	margin-top: 10px;
+	background-color: #1892db;
+	float: left;
+}
+
+#mapEnglishSelect:hover{
+	background-color: #4fb2ed;
+	cursor: pointer;
+}
+
+#mapFrenchSelect{
+	width: 300px;
+	height: 100px;
+	margin-top: 10px;
+	background-color: #0de175;
+	float: left;
+	margin-left: 50px; 
+	margin-bottom: 10px;
+}
+
+#mapFrenchSelect:hover{
+	background-color: #46f09a;
+	cursor: pointer;
+}
+
+#mapNonProfit{
+	width: 300px;
+	height: 100px;
+	margin-top: 10px;
+	background-color: #ff930f;
+	float: right;
+}
+
+#mapNonProfit:hover{
+	background-color: #ffae4b;
+	cursor: pointer;
+}
+
+#mapNonProfit .mapTitle{
+	margin-top: -15px;
+}
+
+#englishTitle{
+	width:954px;
+	background-color: #1892db;
+	color: #fff;
+}
+
+#frenchTitle{
+	width: 954px;
+	background-color: #0de175;
+	color: #fff;
+}
+
+#nonProfitTitle{
+	width: 954px;
+	background-color: #ff930f;
+	color: #fff;
+}
+
+.vendorColumns{
+	columns: 250px 3;
+	-webkit-columns: 250px 3;
+	-moz-columns: 250px 3;
+	height: inherit;
+}
+
+.vendorColumns p{ 
+	margin: 0;
+	line-height: 25px;
+}
+
+.vendorColumns p a{ color: #161616;}
+
+.vendorColumns p a:hover{ color: #1892db; }
+
+.redBorder{ border: 2px solid red; }

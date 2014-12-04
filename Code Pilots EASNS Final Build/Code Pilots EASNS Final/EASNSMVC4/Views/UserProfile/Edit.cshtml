@@ -1,0 +1,78 @@
+﻿@using EASNSMVC4.Models
+@model EASNSMVC4.Models.UserProfile
+
+@if(User.IsInRole("Admin"))
+{ 
+    ViewBag.Title = "Edit User";
+
+<h2>Edit User @Html.DisplayTextFor(model => model.UserName)</h2>
+
+using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UserName)
+            @Html.ValidationMessageFor(model => model.UserName)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserFirst)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UserFirst)
+            @Html.ValidationMessageFor(model => model.UserFirst)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserLast)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UserLast)
+            @Html.ValidationMessageFor(model => model.UserLast)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserEmail)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UserEmail)
+            @Html.ValidationMessageFor(model => model.UserEmail)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserTelephone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UserTelephone)
+            @Html.ValidationMessageFor(model => model.UserTelephone)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserReqRole)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UserReqRole)
+            @Html.ValidationMessageFor(model => model.UserReqRole)
+        </div>
+        <div class="editor-label">
+            @Html.Label("Assigned Role")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Roleos")
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserCity)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UserCity)
+            @Html.ValidationMessageFor(model => model.UserCity)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>}
+}

@@ -1,0 +1,70 @@
+﻿@using EASNSMVC4.Models
+@model EASNSMVC4.Models.UserProfile
+<link href="~/Content/UserProfile.css" rel="stylesheet" />
+
+@if (User.IsInRole("Admin"))
+{
+    <h2>Details for <span style="color: #1892db;">@Html.DisplayTextFor(model => model.UserName)</span></h2>
+    <br />
+
+    using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+
+            <div class="user-left">
+                <span style="color: #1892db; font-weight: bold;">@Html.LabelFor(model => model.UserName)</span>
+                <br />
+                @Html.DisplayTextFor(model => model.UserName)
+            </div>
+            <div class="user-right">
+                <span style="color: #1892db; font-weight: bold;">@Html.LabelFor(model => model.UserEmail)</span>
+                <br />
+                @Html.DisplayTextFor(model => model.UserEmail)
+            </div>
+            <div class="user-left">
+                <br />
+                <span style="color: #1892db; font-weight: bold;">@Html.LabelFor(model => model.UserFirst)</span>
+                <br />
+                @Html.DisplayTextFor(model => model.UserFirst)
+            </div>
+            <div class="user-right">
+                <br />
+                <span style="color: #1892db; font-weight: bold;">@Html.LabelFor(model => model.UserTelephone)</span>
+                <br />
+                @Html.DisplayTextFor(model => model.UserTelephone)
+            </div>
+            <div class="user-left">
+                <br />
+                <span style="color: #1892db; font-weight: bold;">@Html.LabelFor(model => model.UserLast)</span>
+                <br />
+                @Html.DisplayTextFor(model => model.UserLast)
+            </div>
+            <div class="user-right">
+                <br />
+                <span style="color: #1892db; font-weight: bold;">@Html.LabelFor(model => model.UserCity)</span>
+                <br />
+                @Html.DisplayTextFor(model => model.UserCity)
+            </div>
+            <div class="user-left">
+                <br />
+                <span style="color: #1892db; font-weight: bold;">@Html.LabelFor(model => model.UserReqRole)</span>
+                <br />
+                @Html.DisplayTextFor(model => model.UserReqRole)
+            </div>
+            <div class="user-right">
+                <br />
+                <span style="color: #1892db; font-weight: bold;">@Html.Label("Assigned Role")</span>
+                <br />
+                @Html.DisplayText("DetUseInRole")
+            </div>
+            
+        </fieldset>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id=Model.UserId }) 
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    }
+}

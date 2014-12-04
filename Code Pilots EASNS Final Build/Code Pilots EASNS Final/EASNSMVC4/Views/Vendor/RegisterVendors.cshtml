@@ -1,0 +1,112 @@
+﻿@{
+    ViewBag.Title = "RegisterVendors";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/vendorContact.js"></script>
+<link href="~/Content/Contact.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.8.2.js"></script>
+<script>
+    $(function () {
+
+        /*The Submit button Click event */
+        $("#contactSubmit").click(function () {
+            var name = $("#coName").val();
+            var rep = $("#repName").val();
+            var subj = $("#subj").val();
+            var coEmail = $("#coEmail").val();
+            var repEmail = $("#repEmail").val();
+            var det = $("#details").val();
+
+            if (name == "")
+                $("#coName").addClass('redBorder');
+
+            if (rep == "")
+                $("#repName").addClass('redBorder');
+
+            if (subj == "")
+                $("#subj").addClass('redBorder');
+
+            if (coEmail == "")
+                $("#coEmail").addClass('redBorder');
+
+            if (repEmail == "")
+                $("#repEmail").addClass('redBorder');
+
+            if (det == "")
+                $("#details").addClass('redBorder');
+
+            if ((name != "") && (rep != "") && (subj != "") && (coEmail != "") && (repEmail != "") && (det != "")) {
+                $("#failure").css('display', 'none');
+                $("#vendorForm").css('display', 'none');
+                $("#confirmation").fadeIn(1000);
+            }
+
+            else {
+                $("#failure").fadeIn(100);
+            }
+        });
+
+        /*Removing the red border if textbox is focused*/
+        $("#coName").click(function () {
+            $(this).removeClass('redBorder');
+        });
+
+        $("#repName").click(function () {
+            $(this).removeClass('redBorder');
+        });
+
+        $("#subj").click(function () {
+            $(this).removeClass('redBorder');
+        });
+
+        $("#coEmail").click(function () {
+            $(this).removeClass('redBorder');
+        });
+
+        $("#repEmail").click(function () {
+            $(this).removeClass('redBorder');
+        });
+
+        $("#details").click(function () {
+            $(this).removeClass('redBorder');
+        });
+    });
+</script>
+
+<!--===================================================MAIN===================================================-->
+
+<h1 id="disTitle" class="headerText">Register as a Vendor</h1>
+
+<p class="contentText">
+    <b>Please fill out the following form to contact one of our representative. Include your main concerns in the 'Details' section. Please ensure that your contact information is correct, so that we can return any relevant information to you regarding your concerns.<br>Thank you!</b>
+</p>
+<div id="confirmation" class="disnone">
+    <h1>Thank you, your inquiry has been accepted!</h1>
+</div>
+<div id="failure" class="disnone">
+    <h1>Error! Please ensure that all of the required fields are completed.</h1>
+</div>
+<div id="vendorForm">
+    <div id="vendorLeft">
+        <h2 class="contactHeadings">Company Name:</h2><br>
+        <input type="text" class="contactText" id="coName">
+        <br><br>
+        <h2 class="contactHeadings">Representative Name:</h2><br>
+        <input type="text" class="contactText" id="repName">
+        <br><br>
+        <h2 class="contactHeadings">Subject:</h2><br>
+        <input type="text" class="contactText" id="subj">
+        <br><br>
+        <input type="button" id="contactSubmit" value="Submit">
+    </div>
+    <div id="vendorRight">
+        <h2 class="contactHeadings">Company Email:</h2><br>
+        <input type="text" class="contactText" id="coEmail">
+        <br><br>
+        <h2 class="contactHeadings">Representative Email:</h2><br>
+        <input type="text" class="contactText" id="repEmail">
+        <br><br>
+        <h2 class="contactHeadings">Details:</h2><br>
+        <textarea class="contactText" style="width: 400px; height: 200px;" id="details"></textarea>
+    </div>
+</div>

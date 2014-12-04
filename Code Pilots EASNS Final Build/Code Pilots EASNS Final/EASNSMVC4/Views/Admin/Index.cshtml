@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "Admin Control Pannel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/map.css" rel="stylesheet" />
+
+<div id="main">
+    <div id="disTitleSec">
+        <h2 class="headerText">Admin Control Pannel</h2>
+    </div>
+    
+    <p>In here you can access content related to the tables so you can view and edit the details of them.<br />You are also able to view and edit all of the users that are registered to the site.</p>
+
+    @*<h2 class="headerText1">Assistive Technology Provided at Our Technology Center</h2>*@
+
+    <table id="techTable">
+        <tr>
+            <td class="t1">
+                @Html.ActionLink("Users List", "Index", "UserProfile")
+            </td>
+            <td class="t2">
+                Lists all of the users registered to the site. Here you may activate and manage all users.
+            </td>
+        </tr>
+        <tr>
+            <td class="t1">
+                @Html.ActionLink("Vendors List", "Index", "Vendor")
+            </td>
+            <td class="t2">
+                Lists all of the vendors registered on the site. Here you may manage all vendors.
+            </td>
+        </tr>
+        <tr>
+            <td class="t1">
+                @Html.ActionLink("Technology Level", "Index", "TechLevel")
+            </td>
+            <td class="t2">
+                List of all the technology levels that are used for the technology centre inventory.
+            </td>
+        </tr>
+        <tr>
+            <td class="t1">
+                @Html.ActionLink("Stakeholders", "Index", "Stakeholder")
+            </td>
+            <td class="t2">
+                List of all the stakeholder choices that are registered on the site.
+            </td>
+        </tr>
+        <tr>
+            <td class="t1">
+                @Html.ActionLink("File Types", "Index", "FileType")
+            </td>
+            <td class="t2">
+                List of all the file types that can be selected.
+            </td>
+        </tr>
+        <tr>
+            <td class="t1">
+                @Html.ActionLink("Disabilities", "Index", "Disability")
+            </td>
+            <td class="t2">
+                List of all the disabilities that are currently able to be selected.
+            </td>
+        </tr>
+        <tr>
+            <td class="t1">
+                @Html.ActionLink("Active States", "Index", "ActiveState")
+            </td>
+            <td class="t2">
+                List of all the active states that are currently able to be used.
+            </td>
+        </tr>
+        <tr>
+            <td class="t1">
+                @Html.ActionLink("Inventory", "Index", "Inventory")
+            </td>
+            <td class="t2">
+                List of all the inventory's that are in the site.
+            </td>
+        </tr>
+        <tr>
+            <td class="t1">
+                @Html.ActionLink("Inventory Resource", "Index", "InventoryResource")
+            </td>
+            <td class="t2">
+                List of all the inventory resources that are in the site.
+            </td>
+        </tr>
+        <tr>
+            <td class="t1">
+                @Html.ActionLink("Inventory Type", "Index", "InventoryType")
+            </td>
+            <td class="t2">
+                List of all the inventory types that are in the site.
+            </td>
+        </tr>
+        <tr>
+            <td class="t1">
+                @Html.ActionLink("Reporting", "Index", "Reporting")
+            </td>
+            <td class="t2">
+                Generate reports for the site.
+            </td>
+        </tr>
+    </table>
+</div>

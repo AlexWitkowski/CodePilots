@@ -1,0 +1,125 @@
+#contactForm{
+	width: 900px;
+	height: 400px;
+	padding: 50px;
+}
+
+#vendorForm{
+	width: 900px;
+	height: 500px;
+	padding: 50px;
+}
+
+#contactLeft{
+	width: 450px;
+	height: 500px;
+	float: left;
+}
+
+#contactRight{
+	width: 450px;
+	height: 500px;
+	float: right;
+}
+
+#vendorLeft{
+	width: 450px;
+	height: 500px;
+	float: left;
+}
+
+#vendorRight{
+	width: 450px;
+	height: 500px;
+	float: right;
+}
+
+.contactHeadings{ 
+	text-align: left;
+	margin: 0;
+}
+
+.contactText{
+	width: 400px;
+	height: 25px;
+	margin: 0;
+}
+
+#contactSubmit{
+	width: 400px;
+	height:158px;
+	background-color: #1892db;
+	color: #fff;
+	font-size: 2em;
+	border: 2px solid #4fb2ed;
+}
+
+#contactSubmit:hover{
+	background-color: #4fb2ed;
+	color: #161616;
+	border: 2px solid #1892db;
+	cursor: pointer;
+}
+
+#filter{
+	margin-top:50px;
+}
+#filter select{
+	width:120px;
+}
+
+#filter form{
+	background-color:#E0E0E0;
+	padding:8px 15px 15px 15px;
+}
+
+.txtfilter{
+	margin: 0px 0px 8px 0px;
+	width: 450px;
+	height: 25px;
+	background-color: #fff;
+	border: 1px solid #f0f0f0;
+	font-family: Arial;
+	font-size: .8em;
+}
+
+.txtfilter:focus{
+	border: 1px solid #1892db;
+}
+
+.btnSearch{
+	width: 70px;
+	height: 28px;
+	background-color: #161616;
+	color: #fff;
+	font-weight: bold;
+	border: none;
+}
+
+.btnSearch:hover{
+	cursor: pointer;
+	background-color: #414141;
+}
+
+.disnone{
+	display: none;
+}
+/*=========================== MAREK ADDED ======================*/
+
+.redBorder{ border: 2px solid red; }
+
+#confirmation{
+	width: 950px;
+	color: green;
+	margin-top: 50px;
+	font-size: 2em;
+	text-align: center;
+}
+
+#failure{
+	width: 950px;
+	color: red;
+	margin-top: 50px;
+	font-size: 1em;
+	text-align: center;
+}

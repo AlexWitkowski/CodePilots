@@ -1,0 +1,41 @@
+﻿@model IEnumerable<EASNSMVC4.Models.Vendor>
+@{
+    ViewBag.Title = "Vendors List";
+}
+@if(User.IsInRole("Admin"))
+{
+    using (Html.BeginForm())
+    {
+        <p>
+            To find a specific vendor, please insert a <b>Vendor Name</b>:<br />@Html.TextBox("SearchString")
+            <input type="submit" value="Search" />
+        </p>
+    }
+
+    <table>
+        <tr style="border-bottom: solid 1px black;">
+            <td><b>@Html.ActionLink("Vendor", "RepVendor", new { sortOrder = ViewBag.TitleSortParm })</b></td>
+            <td><b>Website</b></td>
+            <td><b>City</b></td>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            var site = @Html.DisplayTextFor(modelItem => item.Website);
+            <tr style="border-bottom: solid 1px black; height: 75px;">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    <a href="http://@site">@Html.DisplayFor(modelItem => item.Website)</a>
+                </td>
+                <td style="text-align:center;">
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    @Html.ActionLink("Return to Reporting", "Index", "Reporting")
+}

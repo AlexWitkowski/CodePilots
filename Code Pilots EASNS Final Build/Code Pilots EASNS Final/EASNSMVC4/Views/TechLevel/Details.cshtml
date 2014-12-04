@@ -1,0 +1,30 @@
+﻿@model EASNSMVC4.Models.TechLevel
+@using EASNSMVC4.Models
+
+@{
+    ViewBag.Title = "Tech Level Details";
+}
+<link href="~/Content/Details.css" rel="stylesheet" />
+@*@if(User.IsInRole("Admin)"))
+    {*@
+<h2>Details for <span> @Html.DisplayTextFor(model => model.Desc)</span></h2>
+<br />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <fieldset>
+
+        <div class="user-left">
+            <span>@Html.DisplayNameFor(model => model.Desc)</span>
+            <br />
+            @Html.DisplayFor(model => model.Desc)
+        </div>
+
+    </fieldset>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID })
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+@*}*@

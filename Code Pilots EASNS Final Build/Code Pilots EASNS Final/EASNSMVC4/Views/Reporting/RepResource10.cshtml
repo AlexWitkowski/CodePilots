@@ -1,0 +1,38 @@
+﻿@model IEnumerable<EASNSMVC4.Models.Resource>
+@{
+    ViewBag.Title = "RepResource";
+}
+@if (User.IsInRole("Admin"))
+{
+    <h2 style="text-align: center;">Top <span style="color: #0094ff"><b>10</b></span> Most Downloaded Resources</h2>
+    <br />
+    <table style="margin: 0 auto;">
+        <tr style="border-bottom: solid 1px black;">
+            <td><b>Resource Name</b></td>
+            <td><b>Times Downloaded</b></td>
+            <td><b>Date Uploaded</b></td>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr style="border-bottom: solid 1px black; height: 75px;">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td style="text-align:center;">
+                    @Html.DisplayFor(modelItem => item.NumDownloads)
+                </td>
+                <td>
+                    @item.CreatedOn.Day/@item.CreatedOn.Month/@item.CreatedOn.Year
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    <br /><br />
+    @Html.ActionLink("Top Resource!", "RepResource1") @:| @Html.ActionLink("Top 5 Resources", "RepResource")
+    <br /><br />
+
+    @Html.ActionLink("Return to Reporting", "Index", "Reporting")
+}

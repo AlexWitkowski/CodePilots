@@ -1,0 +1,78 @@
+﻿@model EASNSMVC4.Models.InventoryResource
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>InventoryResource</legend>
+
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.InventoryTypeID, "InventoryType")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("InventoryTypeID", String.Empty)
+            @Html.ValidationMessageFor(model => model.InventoryTypeID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FilePath)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FilePath)
+            @Html.ValidationMessageFor(model => model.FilePath)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Tags)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Tags)
+            @Html.ValidationMessageFor(model => model.Tags)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FileTypeID, "FileType")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("FileTypeID", String.Empty)
+            @Html.ValidationMessageFor(model => model.FileTypeID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Desc)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Desc)
+            @Html.ValidationMessageFor(model => model.Desc)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

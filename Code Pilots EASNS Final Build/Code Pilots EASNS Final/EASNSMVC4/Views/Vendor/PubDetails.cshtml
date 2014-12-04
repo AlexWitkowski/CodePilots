@@ -1,0 +1,80 @@
+﻿@model EASNSMVC4.Models.Vendor
+@using EASNSMVC4.Models
+@{
+    ViewBag.Title = "Details";
+}
+<link href="~/Content/Style.css" rel="stylesheet" />
+<link href="~/Content/Details.css" rel="stylesheet" />
+<h2>Details for <span>@Html.DisplayTextFor(model => model.Name)</span></h2>
+<br />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <fieldset>
+
+
+        <div class="user-left">
+            <span>@Html.DisplayNameFor(model => model.Name)</span>
+            <br />
+            @Html.DisplayFor(model => model.Name)
+        </div>
+        <div class="user-right">
+            <span>@Html.DisplayNameFor(model => model.Website)</span>
+            <br />
+            @Html.DisplayTextFor(model => model.Website)
+        </div>
+
+        <div class="user-left">
+            <span>@Html.DisplayNameFor(model => model.Phone)</span>
+            <br />
+            @Html.DisplayFor(model => model.Phone)
+        </div>
+
+        <div class="user-right">
+            <span>@Html.DisplayNameFor(model => model.Email)</span>
+            <br />
+            @Html.DisplayFor(model => model.Email)
+        </div>
+
+        <div class="user-left">
+            <span>@Html.DisplayNameFor(model => model.Desc)</span>
+            <br />
+            @Html.DisplayFor(model => model.Desc)
+        </div>
+
+        <div class="user-right">
+            <span>@Html.DisplayNameFor(model => model.Country)</span>
+            <br />
+            @Html.DisplayFor(model => model.Country)
+        </div>
+
+        <div class="user-left">
+            <span>@Html.DisplayNameFor(model => model.Province)</span>
+            <br />
+            @Html.DisplayFor(model => model.Province)
+        </div>
+
+        <div class="user-right">
+            <span>@Html.DisplayNameFor(model => model.City)</span>
+            <br />
+            @Html.DisplayFor(model => model.City)
+        </div>
+
+        <div class="user-left">
+            <span>@Html.DisplayNameFor(model => model.Address)</span>
+            <br />
+            @Html.DisplayFor(model => model.Address)
+        </div>
+
+        <div class="user-right">
+            <span>@Html.DisplayNameFor(model => model.PostalCode)</span>
+            <br />
+            @Html.DisplayFor(model => model.PostalCode)
+        </div>
+    </fieldset>
+ 
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
+}

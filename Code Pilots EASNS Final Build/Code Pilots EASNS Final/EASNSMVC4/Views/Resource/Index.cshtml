@@ -1,0 +1,58 @@
+﻿@model IEnumerable<EASNSMVC4.Models.Resource>
+
+@{
+    ViewBag.Title = "Resources";
+    }
+<h2>Resources</h2>
+@using (Html.BeginForm())
+{
+    <p>
+        To find a specific file, please insert a <b>File Name</b>:<br />@Html.TextBox("SearchString")  
+        <input type="submit" value="Search" />
+    </p>
+}
+<p>
+    @Html.ActionLink("Upload New Resource", "Create")
+</p>
+<table>
+    <tr style="border-bottom: solid 1px black;">
+        <td><b>@Html.ActionLink("Title", "Index", new { sortOrder = ViewBag.TitleSortParm })</b></td>
+        <td><b>File Type</b></td>
+        <td><b>Download</b></td>
+        <td><b>@Html.ActionLink("Times Downloaded", "Index", new { sortOrder = ViewBag.DownloadSortParm })</b></td>
+        <td><b>@Html.ActionLink("Date Uploaded", "Index", new { sortOrder = ViewBag.DateSortParm })</b></td>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr style="border-bottom: solid 1px black;" height="50px">
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FileType.Desc)
+        </td>
+        <td>
+            @Html.ActionLink("Download", "Download", new { path = item.FilePath })
+        </td>
+        <td style="text-align:center;">
+            @Html.DisplayFor(modelItem => item.NumDownloads)
+        </td>
+        <td>
+            @item.CreatedOn.Day/@item.CreatedOn.Month/@item.CreatedOn.Year
+        </td>
+        <td>
+            @if (User.IsInRole("Admin"))
+            {
+                @Html.ActionLink("Edit", "Edit", new { id=item.ID })
+            } 
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) 
+            @if (User.IsInRole("Admin"))
+            {
+                @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            }
+        </td>
+    </tr>
+}
+
+</table>
+    

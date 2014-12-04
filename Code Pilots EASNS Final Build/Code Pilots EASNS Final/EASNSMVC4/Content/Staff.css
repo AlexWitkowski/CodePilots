@@ -1,0 +1,23 @@
+/*===================== Staff PAGE ==========*/
+.imgstaff{
+	float: right; 
+	margin-left: 50px; 
+	border: 1px solid #dcdcdc;"
+}
+
+.line{
+	height: 50px; 
+	width: 100%; 
+	border-bottom: 1px solid #dcdcdc; 
+	padding-top: 25px;
+	clear: both;
+}
+
+.space{
+	height: 50px; 
+	width: 100%;
+	padding-top: 25px;
+	clear: both;
+}
+
+#disTitle{ border-bottom: 1px solid #dcdcdc; }

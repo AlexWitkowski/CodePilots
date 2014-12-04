@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/Contact.css" rel="stylesheet" />
+<script src="~/Scripts/contact.js"></script>
+<script src="~/Scripts/jquery-1.8.2.js"></script>
+<script>
+    $(function () {
+        /*The Submit button Click event */
+        $("#contactSubmit").click(function () {
+            var name = $("#coName").val();
+            var subj = $("#subj").val();
+            var coEmail = $("#coEmail").val();
+            var det = $("#details").val();
+
+            if (name == "")
+                $("#coName").addClass('redBorder');
+
+            if (subj == "")
+                $("#subj").addClass('redBorder');
+
+            if (coEmail == "")
+                $("#coEmail").addClass('redBorder');
+
+            if (det == "")
+                $("#details").addClass('redBorder');
+
+            if ((name != "") && (subj != "") && (coEmail != "") && (det != "")) {
+                $("#failure").css('display', 'none');
+                $("#contactForm").css('display', 'none');
+                $("#confirmation").fadeIn(1000);
+            }
+
+            else {
+                $("#failure").fadeIn(100);
+            }
+        });
+
+        /*Removing the red border if textbox is focused*/
+        $("#coName").click(function () {
+            $(this).removeClass('redBorder');
+        });
+
+        $("#subj").click(function () {
+            $(this).removeClass('redBorder');
+        });
+
+        $("#coEmail").click(function () {
+            $(this).removeClass('redBorder');
+        });
+
+        $("#details").click(function () {
+            $(this).removeClass('redBorder');
+        });
+    });
+</script>
+<!--=======================================MAIN==================================-->
+<h1 id="disTitle" class="headerText">Contact</h1>
+
+<p class="contentText">
+    <b>Please fill out the following form to contact one of our representative. Include your main concerns in the 'Details' section. Please ensure that your contact information is correct, so that we can return any relevant information to you regarding your concerns. Thank you!</b>
+</p>
+<div id="confirmation" style="display: none;">
+    <h1>Thank you, your inquiry has been accepted!</h1>
+</div>
+<div id="failure" style="display: none;">
+    <h1>Error! Please ensure that all of the required fields are completed.</h1>
+</div>
+<div id="contactForm">
+    <div id="contactLeft">
+        <h2 class="contactHeadings">Name:</h2><br>
+        <input type="text" class="contactText" id="coName">
+        <br><br>
+        <h2 class="contactHeadings">Email:</h2><br>
+        <input type="text" class="contactText" id="coEmail">
+        <br><br>
+        <input type="button" id="contactSubmit" value="Submit">
+    </div>
+    <div id="contactRight">
+        <h2 class="contactHeadings">Subject:</h2><br>
+        <input type="text" class="contactText" id="subj">
+        <br><br>
+        <h2 class="contactHeadings">Details:</h2><br>
+        <textarea class="contactText" style="width: 400px; height: 200px;" id="details"></textarea>
+    </div>
+</div>

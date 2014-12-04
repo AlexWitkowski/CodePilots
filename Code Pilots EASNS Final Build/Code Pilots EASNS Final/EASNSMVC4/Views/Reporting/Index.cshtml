@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Reporting";
+}
+@if(User.IsInRole("Admin"))
+{ 
+    <h1 id="disTitle" class="headerText">Reporting</h1>
+    <p>@Html.ActionLink("Back to Control Pannel", "Index", "Admin")</p>
+    
+    <h3>Please select a sub-category to view the proper set of reports:</h3>
+
+    <ul>
+        <li>@Html.ActionLink("Top Resource Downloads", "RepResource", "Reporting")<br /><small>This sub-category includes the five most downloaded resources available.</small><br /><br /></li>
+        <li>@Html.ActionLink("Most Popular Cities", "RepUserCities", "Reporting")<br /><small>This sub-category includes the top three cities that active users are located in.</small><br /><br /></li>
+        <li>@Html.ActionLink("List of Vendors", "RepVendor", "Reporting")<br /><small>This sub-category contains a list of all of the available vendors. The list includes search functionality.</small></li>
+    </ul>
+}

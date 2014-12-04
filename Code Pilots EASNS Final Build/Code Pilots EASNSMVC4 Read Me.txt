@@ -1,0 +1,18 @@
+Code Pilots Educational Assistant Special Needs Support Website:
+Our website showcases the Educational Assistant Special Needs Support information and section that the client requested.
+
+Special Features:
+-Reporting system for downloads, cities, and vendors.
+-Admin control pannel to change many different parts of the webiste.
+-Resource database which lists all of the resources that are uploaded by a logged in user
+-Technology Centre with list of the hardware and vendors.
+
+
+Map Email Address: EASNSMVC4@gmail.com
+		password: codepilots
+Embed for map: <iframe src="https://mapsengine.google.com/map/embed?mid=zm3xzuGtxgbk.kkcg2mDyR1Hw" width="640" height="480"></iframe>
+Embed map for tech centre splash page: <iframe src="https://mapsengine.google.com/map/embed?mid=zm3xzuGtxgbk.k411zks91UQU" width="640" height="480"></iframe>
+
+Users List:(Username, Password)
+***NORMAL USER***:(DStovell, Marek123)
+***ADMIN***:(JADMIN, codepilots)

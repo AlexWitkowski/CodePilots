@@ -1,0 +1,50 @@
+﻿@model EASNSMVC4.Models.Peripheral
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm("Create", "Peripheral", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <fieldset>
+        <legend>Hardware</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Desc)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Desc)
+            @Html.ValidationMessageFor(model => model.Desc)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TechLevelID, "TechLevel")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("TechLevelID", String.Empty)
+            @Html.ValidationMessageFor(model => model.TechLevelID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Display)
+        </div>
+        <div class="editor-field">
+            <input type="file" name="fileupload" />
+            @Html.ValidationMessageFor(model => model.Display)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
